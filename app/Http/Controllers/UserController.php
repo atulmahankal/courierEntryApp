@@ -48,7 +48,7 @@ class UserController extends Controller
 
       // dd($request->all(),$validator);
       if ($validatorMerge->fails()) {
-			  return redirect()->Back()->withInput()->withErrors($validator);
+			  return redirect()->Back()->withInput()->withErrors($validatorMerge->errors());
       }
 
       $record->name = ucwords($request->get('name'));

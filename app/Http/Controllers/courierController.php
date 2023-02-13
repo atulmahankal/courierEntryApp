@@ -29,8 +29,8 @@ class courierController extends Controller
       'type' => ['required'],
       'party' => ['required'],
       'courier_name' => ['required'],
-      'courier_contact' => ['required', 'integer'],
-      'person_contact' => ['integer'],
+      'courier_contact' => ['required', 'integer', 'digits:10'],
+      'person_contact' => ['integer', 'digits:10'],
     ];
 
     if ($request->has('submit')) {
@@ -41,7 +41,7 @@ class courierController extends Controller
 
       if ($validatorMerge->fails()) {
         // dd($request->all(), $validator);
-			  return redirect()->Back()->withInput()->withErrors($validator);
+			  return redirect()->Back()->withInput()->withErrors($validatorMerge->errors());
       }
 
       $record->date = $request->get('date');

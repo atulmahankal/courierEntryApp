@@ -20,12 +20,13 @@ return new class extends Migration
 					$table->timestamp('date');
 					$table->string('direction');
 					$table->string('type');
+					$table->string('party');
 					$table->string('courier_name');
 					$table->string('courier_contact');
-					$table->string('person_name');
-					$table->string('person_contact');
-					$table->longText('remarks');
-					$table->string('status');
+					$table->string('person_name')->nullable();;
+					$table->string('person_contact')->nullable();;
+					$table->longText('remarks')->nullable();;
+					$table->string('status')->nullable();;
 					$table->timestamps();
 				});
 			}
