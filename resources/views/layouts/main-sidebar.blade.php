@@ -64,7 +64,7 @@
 
 				<li class="nav-item">
 					<a href="{{ url('courier') }}" class="nav-link {{ Request::is('courier') ? 'active' : '' }}">
-						<i class="nav-icon fas fa-users"></i>
+						<i class="nav-icon fas fa-cubes"></i>
 						<p>
 							Courier
 							{{-- <span class="right badge badge-danger">New</span> --}}
@@ -75,7 +75,7 @@
 				@if(auth()->user()->isAdmin)
 				<li class="nav-item">
 					<a href="{{ url('users') }}" class="nav-link {{ Request::is('users') ? 'active' : '' }}">
-						<i class="nav-icon fas fa-cubes"></i>
+						<i class="nav-icon fas fa-users"></i>
 						<p>
 							Users
 							{{-- <span class="right badge badge-danger">New</span> --}}
